@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>ShopHub</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Discover our wide range of quality products</p>
+            <div class="search-filter">
+                <input type="text" id="search-input" placeholder="Search products..." onkeyup="filterProducts()">
+                <select id="category-filter" onchange="filterProducts()">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="computers">Computers</option>
+                    <option value="audio">Audio</option>
+                    <option value="mobile">Mobile & Tablets</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="products-grid">
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Wireless Headphones">
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">₹8,299</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Wireless Headphones', 8299)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Smart Watch">
+                    <h3>Smart Watch</h3>
+                    <p class="price">₹16,499</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Smart Watch', 16499)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop" alt="Laptop Stand">
+                    <h3>Laptop Stand</h3>
+                    <p class="price">₹4,199</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Laptop Stand', 4199)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=300&h=300&fit=crop" alt="USB-C Cable">
+                    <h3>USB-C Cable</h3>
+                    <p class="price">₹1,699</p>
+                    <button class="btn btn-secondary" onclick="addToCart('USB-C Cable', 1699)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=300&h=300&fit=crop" alt="Gaming Mouse">
+                    <h3>Gaming Mouse</h3>
+                    <p class="price">₹6,599</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Gaming Mouse', 6599)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=300&fit=crop" alt="Mechanical Keyboard">
+                    <h3>Mechanical Keyboard</h3>
+                    <p class="price">₹10,799</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Mechanical Keyboard', 10799)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="audio">
+                    <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop" alt="Bluetooth Speaker">
+                    <h3>Bluetooth Speaker</h3>
+                    <p class="price">₹5,799</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Bluetooth Speaker', 5799)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="audio">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&h=300&fit=crop" alt="Wireless Earbuds">
+                    <h3>Wireless Earbuds</h3>
+                    <p class="price">₹7,499</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Wireless Earbuds', 7499)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Tablet Stand">
+                    <h3>Tablet Stand</h3>
+                    <p class="price">₹3,299</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Tablet Stand', 3299)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=300&fit=crop" alt="Phone Case">
+                    <h3>Phone Case</h3>
+                    <p class="price">₹2,099</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Phone Case', 2099)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop" alt="Monitor Stand">
+                    <h3>Monitor Stand</h3>
+                    <p class="price">₹4,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Monitor Stand', 4999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f5bf2f5?w=300&h=300&fit=crop" alt="Power Bank">
+                    <h3>Power Bank</h3>
+                    <p class="price">₹2,899</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Power Bank', 2899)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="mobile">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop" alt="Smartphone">
+                    <h3>Smartphone</h3>
+                    <p class="price">₹24,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Smartphone', 24999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=300&fit=crop" alt="Laptop">
+                    <h3>Laptop</h3>
+                    <p class="price">₹54,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Laptop', 54999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="mobile">
+                    <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=300&fit=crop" alt="Tablet">
+                    <h3>Tablet</h3>
+                    <p class="price">₹18,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Tablet', 18999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=300&h=300&fit=crop" alt="LED TV">
+                    <h3>LED TV 43 inch</h3>
+                    <p class="price">₹32,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('LED TV 43 inch', 32999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=300&h=300&fit=crop&q=80" alt="Webcam">
+                    <h3>HD Webcam</h3>
+                    <p class="price">₹3,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('HD Webcam', 3999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f5bf2f5?w=300&h=300&fit=crop&q=80" alt="Wireless Charger">
+                    <h3>Wireless Charger</h3>
+                    <p class="price">₹2,499</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Wireless Charger', 2499)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56e16eb?w=300&h=300&fit=crop" alt="External HDD">
+                    <h3>External HDD 1TB</h3>
+                    <p class="price">₹5,499</p>
+                    <button class="btn btn-secondary" onclick="addToCart('External HDD 1TB', 5499)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="audio">
+                    <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop" alt="Soundbar">
+                    <h3>Soundbar</h3>
+                    <p class="price">₹12,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Soundbar', 12999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=300&h=300&fit=crop" alt="Smart Bulb">
+                    <h3>Smart LED Bulb</h3>
+                    <p class="price">₹1,299</p>
+                    <button class="btn btn-secondary" onclick="addToCart('Smart LED Bulb', 1299)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1625842268584-8f3296236761?w=300&h=300&fit=crop&q=80" alt="USB Hub">
+                    <h3>USB Hub 4 Port</h3>
+                    <p class="price">₹1,899</p>
+                    <button class="btn btn-secondary" onclick="addToCart('USB Hub 4 Port', 1899)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56e16eb?w=300&h=300&fit=crop" alt="SSD">
+                    <h3>SSD 512GB</h3>
+                    <p class="price">₹4,999</p>
+                    <button class="btn btn-secondary" onclick="addToCart('SSD 512GB', 4999)">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=300&h=300&fit=crop" alt="Router">
+                    <h3>WiFi Router</h3>
+                    <p class="price">₹3,499</p>
+                    <button class="btn btn-secondary" onclick="addToCart('WiFi Router', 3499)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopHub</h3>
+                    <p>Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: bindugorthi2954@gamil.com</p>
+                    <p>Phone: +91 7993065190</p>
+                    <p>Address: Venkatadrpalli, Beluguppa, Anantapur</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
