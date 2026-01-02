@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="top-banner-content">
+            <span>🎉 Special Offer: Get 20% off on your first order! Use code: <strong>WELCOME20</strong></span>
+        </div>
+        <span class="close-banner" onclick="closeBanner()">×</span>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -21,10 +29,16 @@
                 <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-toggle-icon">🌙</span>
+                    <span>Theme</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>

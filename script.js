@@ -141,7 +141,7 @@ function calculateTotal() {
 function filterProducts() {
     const searchInput = document.getElementById('search-input');
     const categoryFilter = document.getElementById('category-filter');
-    const productCards = document.querySelectorAll('.product-card');
+    const productCards = document.querySelectorAll('.product-card, .flip-card');
     
     if (!searchInput || !categoryFilter) return;
     
@@ -248,8 +248,67 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Theme Toggle Function
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update toggle button icon
+    const toggleIcon = document.querySelector('.theme-toggle-icon');
+    if (toggleIcon) {
+        toggleIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+// Initialize theme on page load
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const toggleIcon = document.querySelector('.theme-toggle-icon');
+    if (toggleIcon) {
+        toggleIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+// Close banner function
+function closeBanner() {
+    const banner = document.querySelector('.top-banner');
+    if (banner) {
+        banner.style.display = 'none';
+        localStorage.setItem('bannerClosed', 'true');
+    }
+}
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme
+    initTheme();
+    
+    // Check if banner was closed
+    if (localStorage.getItem('bannerClosed') === 'true') {
+        const banner = document.querySelector('.top-banner');
+        if (banner) {
+            banner.style.display = 'none';
+        }
+    }
+    
+    // Theme toggle button
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Close banner button
+    const closeBannerBtn = document.querySelector('.close-banner');
+    if (closeBannerBtn) {
+        closeBannerBtn.addEventListener('click', closeBanner);
+    }
+    
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     

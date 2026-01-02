@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="top-banner-content">
+            <span>🎉 Special Offer: Get 20% off on your first order! Use code: <strong>WELCOME20</strong></span>
+        </div>
+        <span class="close-banner" onclick="closeBanner()">×</span>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -21,10 +29,16 @@
                 <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-toggle-icon">🌙</span>
+                    <span>Theme</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -54,231 +68,555 @@
         <div class="container">
             <div class="products-grid" id="products-grid">
                 <!-- Women's Dresses -->
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Floral Summer Dress">
-                    <h3>Floral Summer Dress</h3>
-                    <p class="price">₹599</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Floral Summer Dress', 599)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Floral Summer Dress">
+                            <h3>Floral Summer Dress</h3>
+                            <p class="price">₹599</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Floral Summer Dress</h3>
+                            <p>Perfect for summer days! Lightweight and comfortable with beautiful floral patterns.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-primary" onclick="addToCart('Floral Summer Dress', 599)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Elegant Party Dress">
-                    <h3>Elegant Party Dress</h3>
-                    <p class="price">₹899</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Elegant Party Dress', 899)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Elegant Party Dress">
+                            <h3>Elegant Party Dress</h3>
+                            <p class="price">₹899</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Elegant Party Dress</h3>
+                            <p>Make a statement at any event! Elegant design perfect for parties and special occasions.</p>
+                            <p class="price">₹899</p>
+                            <button class="btn btn-primary" onclick="addToCart('Elegant Party Dress', 899)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Casual Maxi Dress">
-                    <h3>Casual Maxi Dress</h3>
-                    <p class="price">₹699</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Casual Maxi Dress', 699)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Casual Maxi Dress">
+                            <h3>Casual Maxi Dress</h3>
+                            <p class="price">₹699</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Casual Maxi Dress</h3>
+                            <p>Comfortable and stylish maxi dress perfect for everyday wear. Soft fabric and flattering fit.</p>
+                            <p class="price">₹699</p>
+                            <button class="btn btn-primary" onclick="addToCart('Casual Maxi Dress', 699)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="A-Line Midi Dress">
-                    <h3>A-Line Midi Dress</h3>
-                    <p class="price">₹799</p>
-                    <button class="btn btn-secondary" onclick="addToCart('A-Line Midi Dress', 799)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="A-Line Midi Dress">
+                            <h3>A-Line Midi Dress</h3>
+                            <p class="price">₹799</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>A-Line Midi Dress</h3>
+                            <p>Classic A-line silhouette that flatters all body types. Perfect for office or casual outings.</p>
+                            <p class="price">₹799</p>
+                            <button class="btn btn-primary" onclick="addToCart('A-Line Midi Dress', 799)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Wrap Dress">
-                    <h3>Wrap Dress</h3>
-                    <p class="price">₹849</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Wrap Dress', 849)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Wrap Dress">
+                            <h3>Wrap Dress</h3>
+                            <p class="price">₹849</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Wrap Dress</h3>
+                            <p>Flattering wrap style that accentuates your waist. Versatile and comfortable for any occasion.</p>
+                            <p class="price">₹849</p>
+                            <button class="btn btn-primary" onclick="addToCart('Wrap Dress', 849)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Off-Shoulder Dress">
-                    <h3>Off-Shoulder Dress</h3>
-                    <p class="price">₹749</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Off-Shoulder Dress', 749)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Off-Shoulder Dress">
+                            <h3>Off-Shoulder Dress</h3>
+                            <p class="price">₹749</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Off-Shoulder Dress</h3>
+                            <p>Trendy off-shoulder design that adds elegance. Perfect for date nights and special events.</p>
+                            <p class="price">₹749</p>
+                            <button class="btn btn-primary" onclick="addToCart('Off-Shoulder Dress', 749)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Bodycon Dress">
-                    <h3>Bodycon Dress</h3>
-                    <p class="price">₹949</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Bodycon Dress', 949)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Bodycon Dress">
+                            <h3>Bodycon Dress</h3>
+                            <p class="price">₹949</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Bodycon Dress</h3>
+                            <p>Figure-hugging style that shows off your curves. Made with stretchy, comfortable fabric.</p>
+                            <p class="price">₹949</p>
+                            <button class="btn btn-primary" onclick="addToCart('Bodycon Dress', 949)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-dresses">
-                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Shirt Dress">
-                    <h3>Shirt Dress</h3>
-                    <p class="price">₹649</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Shirt Dress', 649)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Shirt Dress">
+                            <h3>Shirt Dress</h3>
+                            <p class="price">₹649</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Shirt Dress</h3>
+                            <p>Classic shirt dress style that's both professional and casual. Great for work or weekend.</p>
+                            <p class="price">₹649</p>
+                            <button class="btn btn-primary" onclick="addToCart('Shirt Dress', 649)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Men's Dresses/Shirts -->
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Formal Shirt">
-                    <h3>Formal Shirt</h3>
-                    <p class="price">₹599</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Formal Shirt', 599)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Formal Shirt">
+                            <h3>Formal Shirt</h3>
+                            <p class="price">₹599</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Formal Shirt</h3>
+                            <p>Premium quality formal shirt perfect for office and business meetings. Crisp and professional.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-primary" onclick="addToCart('Formal Shirt', 599)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Casual Shirt">
-                    <h3>Casual Shirt</h3>
-                    <p class="price">₹499</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Casual Shirt', 499)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Casual Shirt">
+                            <h3>Casual Shirt</h3>
+                            <p class="price">₹499</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Casual Shirt</h3>
+                            <p>Comfortable casual shirt for everyday wear. Soft fabric and relaxed fit for maximum comfort.</p>
+                            <p class="price">₹499</p>
+                            <button class="btn btn-primary" onclick="addToCart('Casual Shirt', 499)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Polo Shirt">
-                    <h3>Polo Shirt</h3>
-                    <p class="price">₹449</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Polo Shirt', 449)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Polo Shirt">
+                            <h3>Polo Shirt</h3>
+                            <p class="price">₹449</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Polo Shirt</h3>
+                            <p>Classic polo shirt with collar. Versatile style that works for casual and semi-formal occasions.</p>
+                            <p class="price">₹449</p>
+                            <button class="btn btn-primary" onclick="addToCart('Polo Shirt', 449)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Denim Shirt">
-                    <h3>Denim Shirt</h3>
-                    <p class="price">₹699</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Denim Shirt', 699)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Denim Shirt">
+                            <h3>Denim Shirt</h3>
+                            <p class="price">₹699</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Denim Shirt</h3>
+                            <p>Stylish denim shirt with a rugged look. Perfect for casual outings and weekend wear.</p>
+                            <p class="price">₹699</p>
+                            <button class="btn btn-primary" onclick="addToCart('Denim Shirt', 699)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Checked Shirt">
-                    <h3>Checked Shirt</h3>
-                    <p class="price">₹549</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Checked Shirt', 549)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Checked Shirt">
+                            <h3>Checked Shirt</h3>
+                            <p class="price">₹549</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Checked Shirt</h3>
+                            <p>Trendy checked pattern shirt. Great for layering or wearing on its own. Timeless style.</p>
+                            <p class="price">₹549</p>
+                            <button class="btn btn-primary" onclick="addToCart('Checked Shirt', 549)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Linen Shirt">
-                    <h3>Linen Shirt</h3>
-                    <p class="price">₹649</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Linen Shirt', 649)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Linen Shirt">
+                            <h3>Linen Shirt</h3>
+                            <p class="price">₹649</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Linen Shirt</h3>
+                            <p>Breathable linen fabric perfect for hot weather. Lightweight and comfortable for summer.</p>
+                            <p class="price">₹649</p>
+                            <button class="btn btn-primary" onclick="addToCart('Linen Shirt', 649)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Striped Shirt">
-                    <h3>Striped Shirt</h3>
-                    <p class="price">₹599</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Striped Shirt', 599)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Striped Shirt">
+                            <h3>Striped Shirt</h3>
+                            <p class="price">₹599</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Striped Shirt</h3>
+                            <p>Classic striped design that never goes out of style. Perfect for both casual and smart casual looks.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-primary" onclick="addToCart('Striped Shirt', 599)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-dresses">
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Oxford Shirt">
-                    <h3>Oxford Shirt</h3>
-                    <p class="price">₹749</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Oxford Shirt', 749)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-dresses">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Oxford Shirt">
+                            <h3>Oxford Shirt</h3>
+                            <p class="price">₹749</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Oxford Shirt</h3>
+                            <p>Premium Oxford cotton shirt with button-down collar. Durable and stylish for professional settings.</p>
+                            <p class="price">₹749</p>
+                            <button class="btn btn-primary" onclick="addToCart('Oxford Shirt', 749)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Women's Wear -->
-                <div class="product-card" data-category="womens-wear">
-                    <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Women's T-Shirt">
-                    <h3>Women's T-Shirt</h3>
-                    <p class="price">₹399</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Women\'s T-Shirt', 399)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Women's T-Shirt">
+                            <h3>Women's T-Shirt</h3>
+                            <p class="price">₹399</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Women's T-Shirt</h3>
+                            <p>Soft and comfortable cotton t-shirt. Perfect for casual wear and everyday comfort.</p>
+                            <p class="price">₹399</p>
+                            <button class="btn btn-primary" onclick="addToCart('Women\'s T-Shirt', 399)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-wear">
-                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Women's Jeans">
-                    <h3>Women's Jeans</h3>
-                    <p class="price">₹899</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Women\'s Jeans', 899)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Women's Jeans">
+                            <h3>Women's Jeans</h3>
+                            <p class="price">₹899</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Women's Jeans</h3>
+                            <p>Premium denim jeans with perfect fit. Durable and stylish for any occasion.</p>
+                            <p class="price">₹899</p>
+                            <button class="btn btn-primary" onclick="addToCart('Women\'s Jeans', 899)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-wear">
-                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Women's Top">
-                    <h3>Women's Top</h3>
-                    <p class="price">₹499</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Women\'s Top', 499)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Women's Top">
+                            <h3>Women's Top</h3>
+                            <p class="price">₹499</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Women's Top</h3>
+                            <p>Trendy and fashionable top. Versatile design that pairs well with any bottom.</p>
+                            <p class="price">₹499</p>
+                            <button class="btn btn-primary" onclick="addToCart('Women\'s Top', 499)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="womens-wear">
-                    <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Women's Skirt">
-                    <h3>Women's Skirt</h3>
-                    <p class="price">₹599</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Women\'s Skirt', 599)">Add to Cart</button>
+                <div class="flip-card" data-category="womens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=300&h=300&fit=crop" alt="Women's Skirt">
+                            <h3>Women's Skirt</h3>
+                            <p class="price">₹599</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Women's Skirt</h3>
+                            <p>Elegant and feminine skirt. Flattering fit that works for office or casual wear.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-primary" onclick="addToCart('Women\'s Skirt', 599)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Men's Wear -->
-                <div class="product-card" data-category="mens-wear">
-                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Men's T-Shirt">
-                    <h3>Men's T-Shirt</h3>
-                    <p class="price">₹349</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Men\'s T-Shirt', 349)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Men's T-Shirt">
+                            <h3>Men's T-Shirt</h3>
+                            <p class="price">₹349</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Men's T-Shirt</h3>
+                            <p>Classic fit t-shirt made from premium cotton. Comfortable for everyday wear.</p>
+                            <p class="price">₹349</p>
+                            <button class="btn btn-primary" onclick="addToCart('Men\'s T-Shirt', 349)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-wear">
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Men's Jeans">
-                    <h3>Men's Jeans</h3>
-                    <p class="price">₹799</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Men\'s Jeans', 799)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Men's Jeans">
+                            <h3>Men's Jeans</h3>
+                            <p class="price">₹799</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Men's Jeans</h3>
+                            <p>Durable denim jeans with modern fit. Perfect for casual and semi-formal occasions.</p>
+                            <p class="price">₹799</p>
+                            <button class="btn btn-primary" onclick="addToCart('Men\'s Jeans', 799)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-wear">
-                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Men's Trousers">
-                    <h3>Men's Trousers</h3>
-                    <p class="price">₹699</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Men\'s Trousers', 699)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop" alt="Men's Trousers">
+                            <h3>Men's Trousers</h3>
+                            <p class="price">₹699</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Men's Trousers</h3>
+                            <p>Formal trousers perfect for office wear. Professional look with comfortable fit.</p>
+                            <p class="price">₹699</p>
+                            <button class="btn btn-primary" onclick="addToCart('Men\'s Trousers', 699)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="mens-wear">
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Men's Shorts">
-                    <h3>Men's Shorts</h3>
-                    <p class="price">₹499</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Men\'s Shorts', 499)">Add to Cart</button>
+                <div class="flip-card" data-category="mens-wear">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop" alt="Men's Shorts">
+                            <h3>Men's Shorts</h3>
+                            <p class="price">₹499</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Men's Shorts</h3>
+                            <p>Comfortable shorts perfect for summer. Casual style with great fit and durability.</p>
+                            <p class="price">₹499</p>
+                            <button class="btn btn-primary" onclick="addToCart('Men\'s Shorts', 499)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Accessories -->
-                <div class="product-card" data-category="accessories">
-                    <img src="https://images.unsplash.com/photo-1511497336961-63722908c36e?w=300&h=300&fit=crop" alt="Leather Handbag">
-                    <h3>Leather Handbag</h3>
-                    <p class="price">₹899</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Leather Handbag', 899)">Add to Cart</button>
+                <div class="flip-card" data-category="accessories">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1511497336961-63722908c36e?w=300&h=300&fit=crop" alt="Leather Handbag">
+                            <h3>Leather Handbag</h3>
+                            <p class="price">₹899</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Leather Handbag</h3>
+                            <p>Genuine leather handbag with spacious compartments. Stylish and functional design.</p>
+                            <p class="price">₹899</p>
+                            <button class="btn btn-primary" onclick="addToCart('Leather Handbag', 899)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="accessories">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Fashion Belt">
-                    <h3>Fashion Belt</h3>
-                    <p class="price">₹499</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Fashion Belt', 499)">Add to Cart</button>
+                <div class="flip-card" data-category="accessories">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Fashion Belt">
+                            <h3>Fashion Belt</h3>
+                            <p class="price">₹499</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Fashion Belt</h3>
+                            <p>Stylish leather belt with classic buckle. Perfect accessory to complete your look.</p>
+                            <p class="price">₹499</p>
+                            <button class="btn btn-primary" onclick="addToCart('Fashion Belt', 499)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="accessories">
-                    <img src="https://images.unsplash.com/photo-1511497336961-63722908c36e?w=300&h=300&fit=crop" alt="Stylish Watch">
-                    <h3>Stylish Watch</h3>
-                    <p class="price">₹999</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Stylish Watch', 999)">Add to Cart</button>
+                <div class="flip-card" data-category="accessories">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1511497336961-63722908c36e?w=300&h=300&fit=crop" alt="Stylish Watch">
+                            <h3>Stylish Watch</h3>
+                            <p class="price">₹999</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Stylish Watch</h3>
+                            <p>Elegant timepiece with modern design. Perfect blend of style and functionality.</p>
+                            <p class="price">₹999</p>
+                            <button class="btn btn-primary" onclick="addToCart('Stylish Watch', 999)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="accessories">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Sunglasses">
-                    <h3>Sunglasses</h3>
-                    <p class="price">₹599</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Sunglasses', 599)">Add to Cart</button>
+                <div class="flip-card" data-category="accessories">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Sunglasses">
+                            <h3>Sunglasses</h3>
+                            <p class="price">₹599</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Sunglasses</h3>
+                            <p>UV protection sunglasses with trendy frame. Protect your eyes in style.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sunglasses', 599)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="accessories">
-                    <img src="https://images.unsplash.com/photo-1511497336961-63722908c36e?w=300&h=300&fit=crop" alt="Scarf">
-                    <h3>Fashion Scarf</h3>
-                    <p class="price">₹399</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Fashion Scarf', 399)">Add to Cart</button>
+                <div class="flip-card" data-category="accessories">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1511497336961-63722908c36e?w=300&h=300&fit=crop" alt="Scarf">
+                            <h3>Fashion Scarf</h3>
+                            <p class="price">₹399</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Fashion Scarf</h3>
+                            <p>Soft and luxurious scarf. Adds elegance and warmth to any outfit.</p>
+                            <p class="price">₹399</p>
+                            <button class="btn btn-primary" onclick="addToCart('Fashion Scarf', 399)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="accessories">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Wallet">
-                    <h3>Leather Wallet</h3>
-                    <p class="price">₹699</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Leather Wallet', 699)">Add to Cart</button>
+                <div class="flip-card" data-category="accessories">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Wallet">
+                            <h3>Leather Wallet</h3>
+                            <p class="price">₹699</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Leather Wallet</h3>
+                            <p>Premium leather wallet with multiple card slots. Durable and stylish design.</p>
+                            <p class="price">₹699</p>
+                            <button class="btn btn-primary" onclick="addToCart('Leather Wallet', 699)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Shoes -->
-                <div class="product-card" data-category="shoes">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Sneakers">
-                    <h3>Casual Sneakers</h3>
-                    <p class="price">₹899</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Casual Sneakers', 899)">Add to Cart</button>
+                <div class="flip-card" data-category="shoes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Sneakers">
+                            <h3>Casual Sneakers</h3>
+                            <p class="price">₹899</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Casual Sneakers</h3>
+                            <p>Comfortable sneakers perfect for daily wear. Cushioned sole for all-day comfort.</p>
+                            <p class="price">₹899</p>
+                            <button class="btn btn-primary" onclick="addToCart('Casual Sneakers', 899)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="shoes">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Women's Heels">
-                    <h3>Women's Heels</h3>
-                    <p class="price">₹999</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Women\'s Heels', 999)">Add to Cart</button>
+                <div class="flip-card" data-category="shoes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Women's Heels">
+                            <h3>Women's Heels</h3>
+                            <p class="price">₹999</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Women's Heels</h3>
+                            <p>Elegant high heels perfect for special occasions. Stylish design with comfortable fit.</p>
+                            <p class="price">₹999</p>
+                            <button class="btn btn-primary" onclick="addToCart('Women\'s Heels', 999)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="shoes">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Formal Shoes">
-                    <h3>Formal Shoes</h3>
-                    <p class="price">₹949</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Formal Shoes', 949)">Add to Cart</button>
+                <div class="flip-card" data-category="shoes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Formal Shoes">
+                            <h3>Formal Shoes</h3>
+                            <p class="price">₹949</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Formal Shoes</h3>
+                            <p>Classic formal shoes for business and formal events. Premium leather with polished finish.</p>
+                            <p class="price">₹949</p>
+                            <button class="btn btn-primary" onclick="addToCart('Formal Shoes', 949)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="shoes">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Sandals">
-                    <h3>Comfortable Sandals</h3>
-                    <p class="price">₹599</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Comfortable Sandals', 599)">Add to Cart</button>
+                <div class="flip-card" data-category="shoes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Sandals">
+                            <h3>Comfortable Sandals</h3>
+                            <p class="price">₹599</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Comfortable Sandals</h3>
+                            <p>Lightweight sandals perfect for summer. Comfortable straps and cushioned sole.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-primary" onclick="addToCart('Comfortable Sandals', 599)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="shoes">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Sports Shoes">
-                    <h3>Sports Shoes</h3>
-                    <p class="price">₹849</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Sports Shoes', 849)">Add to Cart</button>
+                <div class="flip-card" data-category="shoes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Sports Shoes">
+                            <h3>Sports Shoes</h3>
+                            <p class="price">₹849</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Sports Shoes</h3>
+                            <p>High-performance sports shoes with excellent grip and support. Perfect for workouts.</p>
+                            <p class="price">₹849</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sports Shoes', 849)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card" data-category="shoes">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Flats">
-                    <h3>Women's Flats</h3>
-                    <p class="price">₹699</p>
-                    <button class="btn btn-secondary" onclick="addToCart('Women\'s Flats', 699)">Add to Cart</button>
+                <div class="flip-card" data-category="shoes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Flats">
+                            <h3>Women's Flats</h3>
+                            <p class="price">₹699</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Women's Flats</h3>
+                            <p>Comfortable flat shoes for everyday wear. Stylish design with soft sole for comfort.</p>
+                            <p class="price">₹699</p>
+                            <button class="btn btn-primary" onclick="addToCart('Women\'s Flats', 699)">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
